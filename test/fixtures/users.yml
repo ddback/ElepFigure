@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  pwd: MyString
+  tag: MyString
+  register_time: 2013-05-30 18:31:10
+
+two:
+  name: MyString
+  pwd: MyString
+  tag: MyString
+  register_time: 2013-05-30 18:31:10
