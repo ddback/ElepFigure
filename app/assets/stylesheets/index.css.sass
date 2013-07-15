@@ -1,0 +1,25 @@
+$height: 400px
+$gdlinearStart: rgb(245, 245, 245)
+$gdlinearEnd: rgb(82, 188, 255)
+
+@mixin bgLinearImage ($start, $form, $to) 
+  background-image: -webkit-linear-gradient($start, $form, $to)
+  background-image: -moz-linear-gradient($start, $form, $to)
+  background-image: -ms-linear-gradient($start, $form, $to)
+  background-image: -o-linear-gradient($start, $form, $to)
+  background-image: linear-gradient($start, $form, $to)
+
+@mixin boxSizing ($type)
+  -webkit-box-sizing: $type
+  -moz-box-sizing: $type
+  -ms-box-sizing: $type
+  -o-box-sizing: $type
+  box-sizing: $type
+
+
+.index
+  @include bgLinearImage(top, $gdlinearStart, $gdlinearEnd)
+  @include boxSizing(border-box)
+  height: $height
+  padding-top: 100px
+  border-bottom: 1px solid rgb(116, 116, 116)

@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ElepFigure</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= content_for?(:title) ? yield(:title) : "ElepFigure" %></title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <% if content_for?(:custom_tag) %>
+    <%= stylesheet_link_tag yield(:custom_tag) %>
+    <% end %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <header class="navbar navbar-fixed-top">
+        <nav class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/">ElepFigure</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="/sign/">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="main" role="main">
+        <%= yield %>   
+    </div>
+    <footer>
+    </footer>
+    <%= javascript_include_tag "application" %>
+    <% if content_for?(:custom_tag) %>
+        <%= javascript_include_tag yield(:custom_tag)%>
+    <% end %>
 </body>
 </html>

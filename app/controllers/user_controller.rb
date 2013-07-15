@@ -1,4 +1,8 @@
 class UserController < ActionController::Base
+    def new
+
+    end
+
     def create
 
     end
@@ -7,7 +11,7 @@ class UserController < ActionController::Base
 
     end
 
-    def loginout
+    def destroy
 
     end
 
