@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
     def search
-        name = params[:name]
-        @products = SyncProducts.get_products(name)
+        products_response = JSON.parse(Products.new.get_products(params[:name]))
+        search_response = products_response["products_search_response"]
+        search_count = search_response["total_results"]
+        @products = search_response["products"]["product"]
     end
 end

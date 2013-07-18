@@ -1,3 +1,12 @@
 <div class="container">
-    <%=@products %>
+    <ul>
+        <% @products.each do |product| %>
+            <li id="<%=product["product_id"] %>">
+                <a>
+                    <img src="<%= product["pic_url"] %>"/>
+                </a> 
+                <label><%= product["name"]%></label>
+            </li>
+        <% end %>
+    </ul>
 </div>
